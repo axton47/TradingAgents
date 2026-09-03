@@ -29,4 +29,4 @@ jobs:
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
         run: |
           . .venv/bin/activate
-          python -u scripts/smoke_structured_output.py
+          python -u scripts/smoke_structured_output.py google
