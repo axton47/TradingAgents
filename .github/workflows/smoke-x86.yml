@@ -23,9 +23,10 @@ jobs:
           pip --version
           pip install --prefer-binary -r requirements.txt
 
-      - name: Run smoke script (local stub)
+      - name: Run smoke script (real agent with Google Gemini)
         env:
           PYTHONIOENCODING: 'utf-8'
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
         run: |
           . .venv/bin/activate
-          python -u scripts/smoke_structured_output_local.py
+          python -u scripts/smoke_structured_output.py
